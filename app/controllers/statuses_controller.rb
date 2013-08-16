@@ -1,6 +1,6 @@
 class StatusesController < ApplicationController
   # auth user before everything else
-  before_filter :authenticate_user!, only: [:new] # only to run on the 'new' :method
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update] # only to run on the 'new', 'create', 'edit', 'update' :method
   # GET /statuses
   # GET /statuses.json
   def index
