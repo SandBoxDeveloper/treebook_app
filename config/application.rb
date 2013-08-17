@@ -9,6 +9,10 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
+if Rails.env == "production"
+	config.middleware.use("Rack::GoogleAnalytics", :web_property_id => "UA-42613155-3")
+end
+
 module Treebok
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
