@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   validates :profile_name, presence: true,
   						   uniqueness: true,
   						   format: {
-  						   	with: /a-zA-Z0-9_-/,
+  						   	with: /^[a-zA-Z0-9_-]+$/, # ^, has to match the first part and the last part. [], can be anyone of these characters. +, specifies that your going to need more than one character there.
   						   	message: 'Must be formatted correctly.'
   						   }
   
