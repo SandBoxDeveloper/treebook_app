@@ -24,4 +24,12 @@ class User < ActiveRecord::Base
   def full_name
   	first_name + " " + last_name
   end
+  
+  def gravatar_url
+  	stripped_email = email.strip # removes any spaces before or after text
+  	downcased_email = stripped_email.downcase # turn text into all lowercase
+  	hash = Digest::MD5.hexdigest(downcased_email) # creates hash formate of email
+  	
+  	"http://gravatar.com/avatar/#{hash}" # return gravatar url
+  end
 end
