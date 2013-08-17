@@ -1,4 +1,6 @@
 Treebok::Application.routes.draw do
+  get "profiles/show"
+
   devise_for :users
 
   devise_scope :user do
@@ -12,6 +14,7 @@ Treebok::Application.routes.draw do
   get 'feed', to: 'statuses#index', as: :feed
   root to: 'statuses#index'
   
+  get '/:id', to: 'profiles#show'
   
 
   # The priority is based upon order of creation:

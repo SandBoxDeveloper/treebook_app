@@ -7,3 +7,7 @@ one:
 two:
   content: MyText
   user: sammy
+  
+three:
+  content: "Hi my Michael, the dirty mexican!"
+  user: michael

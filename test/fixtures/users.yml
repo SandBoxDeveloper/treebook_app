@@ -3,6 +3,12 @@ sammy:
   last_name: "john"
   email: "sammy@hotmail.co.uk"
   profile_name: "sammy"
+  
+michael:
+  first_name: "Michael"
+  last_name: "Mexican"
+  email: "michael@hotmail.co.uk"
+  profile_name: "michaelmexican"
 
   
   

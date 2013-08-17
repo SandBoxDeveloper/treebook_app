@@ -42,7 +42,7 @@ class UserTest < ActiveSupport::TestCase
   	user = User.new(first_name: 'simon', last_name: 'john', email: 'sammy1@hotmail.co.uk')
   	user.password = user.password_confirmation = 'absnckldfj'
   	
-  	user.profile_name = 'sammy01'
+  	user.profile_name = 'sammy01' # valid profile name containing letters, numbers, underscores and dashes.
   	assert user.valid?	
   end
 end
