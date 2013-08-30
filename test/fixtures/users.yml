@@ -9,6 +9,13 @@ michael:
   last_name: "Mexican"
   email: "michael@hotmail.co.uk"
   profile_name: "michaelmexican"
+  
+mike:
+  first_name: "Mike"
+  last_name: "The Frog"
+  email: "mike@hotmail.co.uk"
+  profile_name: "mikethefrog"
+
 
   
   
