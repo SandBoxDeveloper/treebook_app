@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= requiree js-routes
 //= require_tree .
+

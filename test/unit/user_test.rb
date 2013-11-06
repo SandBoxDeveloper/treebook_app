@@ -3,6 +3,15 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
   should have_many(:user_friendships)
   should have_many(:friends)
+  #pending
+  should have_many(:pending_user_friendships)
+  should have_many(:pending_friends)
+  #requested
+  should have_many(:requested_user_friendships)
+  should have_many(:requested_friends)
+  #blocked
+  should have_many(:blocked_user_friendships)
+  should have_many(:blocked_friends)
 
   test "a user should enter a first name" do
   user = User.new
@@ -56,11 +65,23 @@ class UserTest < ActiveSupport::TestCase
   end
   
   test "that creating friendships on a user works" do
-    users(:sammy).friends << users(:mike) # add mike to sammy's list of friends
-    users(:sammy).friends.reload
-    assert users(:sammy).friends.include?(users(:mike)) # then checking to make sure sammy is still in the database after reloading it.
+    users(:sammy).pending_friends << users(:mike) # add mike to sammy's list of friends
+    users(:sammy).pending_friends.reload
+    assert users(:sammy).pending_friends.include?(users(:mike)) # then checking to make sure sammy is still in the database after reloading it.
   end
   
+  test "that calling to_param on a user returns the profile_name" do
+    assert_equal "sammy", users(:sammy).to_param
+  end
 
+  context "#has_blocked?" do
+    should "return true if a user has blocked another user" do
+      assert users(:sammy).has_blocked?(users(:blocked_friend))
+    end
+
+    should "return false if a user has not blocked another user" do
+      assert !users(:sammy).has_blocked?(users(:michael))
+    end
+  end
   
 end

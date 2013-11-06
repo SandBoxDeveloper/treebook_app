@@ -6,5 +6,11 @@
 #
 one: 
   user: sammy
-  friend: Michael
+  friend: michael
+
+blocked_by_sammy:
+  user: sammy
+  friend: blocked_friend
+  state: 'blocked'
+
 

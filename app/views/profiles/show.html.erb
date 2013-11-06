@@ -2,6 +2,17 @@
 	<h1><%= @user.full_name %></h1>
 </div>
 
+<!-- dont want to display unless someone is actually signed in -->
+<% if signed_in? %>
+<div id="friend-status">
+	<% if current_user.friends.include?(@user) || current_user.pending_friends.include?(@user) %>
+		<%= link_to "Edit Friendship", edit_user_friendship_path(friend_id: @user), class: 'btn btn' %>
+	<% else %>
+		<%= link_to "Add Friend", new_user_friendship_path(friend_id: @user), class: 'btn', id: 'add-friendship', data: {friend_id: @user.to_param } %>
+	<% end %>
+</div>
+<% end %>
+
 <!-- check to make sure that there are statuses to display-->
 <% if @statuses %>
 	<% @statuses.each do |status| %>

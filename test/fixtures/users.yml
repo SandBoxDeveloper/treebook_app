@@ -3,6 +3,8 @@ sammy:
   last_name: "john"
   email: "sammy@hotmail.co.uk"
   profile_name: "sammy"
+  encrypted_password: "$2a$10$Fh/Hm8RxDsuPTeBUr6864.GARlcmt7zF2WspaXGr3BIv2C27N.osq"
+  #&2a$10$Fh/Hm8RxDsuPTeBUr6864.GARlcmt7zF2WspaXGr3BIv2C27N.osq
   
 michael:
   first_name: "Michael"
@@ -16,6 +18,11 @@ mike:
   email: "mike@hotmail.co.uk"
   profile_name: "mikethefrog"
 
+blocked_friend:
+  first_name: 'Blocked'
+  last_name: 'Friend'
+  email: 'blocked@hotmail.co.uk'
+  profile_name: 'youblockedme' 
 
   
   

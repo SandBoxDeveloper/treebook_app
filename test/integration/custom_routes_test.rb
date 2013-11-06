@@ -25,6 +25,6 @@ class CustomRoutesTest < ActionDispatch::IntegrationTest
   	# make sure that a person's profile page can be 'GET'
   	test "that a profle page works" do
   		get '/sammy'
-  		asseert_response :success
+  		assert_response :success
   	end
 end
