@@ -1,5 +1,11 @@
 class UserNotifier < ActionMailer::Base
   default from: "from@example.com"
+
+  def welcome_email(user)
+    @user = user
+    @url = 'http://example.com/login'
+    mail (to: @user.email, subject: 'Welcome to treebook!'    
+  end
   
   def friend_requested(user_friendship_id)
     user_friendship = UserFriendship.find(user_friendship_id)
