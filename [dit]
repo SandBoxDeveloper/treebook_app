@@ -1,0 +1,6 @@
+
+Host heroku.work
+  HostName heroku.com
+  IdentityFile ~/.ssh/id_rsa.pub
+  IdentitiesOnly yes
+

@@ -16,10 +16,12 @@ group :test do
 	gem 'factory_girl_rails'
 end
 
+# only when in development or test, obey these gem files
 group :development, :test do
 	gem 'sqlite3'
 end
 
+# only when in production, obey these gem files
 group :production do
 	gem 'pg'
 	gem 'rack-google_analytics', :require => "rack/google_analytics"
